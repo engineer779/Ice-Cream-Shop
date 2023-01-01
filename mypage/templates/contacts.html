@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Contacts
+{% endblock title  %}
+
+
+{% block body %}
+<div class = "container-fluid px-0 mb-3">
+    <img src="https://source.unsplash.com/1200x400/?phone, contact" class="d-block w-100 mx-0" alt="">
+</div>
+<div class = "container mb-3" >
+    <h1 class="text-center" style="margin-top:10px">Contact Us</h1>
+    <form method="post" action="/contacts">
+    {% csrf_token %}
+    <div class="form-group text-center">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+    </div>
+
+    <div class="form-group text-center">
+        <label for="email">E-mail Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-mail">
+    </div>
+
+    <div class="form-group text-center">
+        <label for="phone">Please enter your phone number </label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone number ">
+    </div>
+
+    <div class="form-group text-center">
+        <label for="desc">Tell me what you want to contact me for</label>
+        <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<div class="bottom" style="padding: 10px 0 10px;
+background-color: #212529cc; padding-right: 20px">
+            
+    <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+    <a class="footer-link" href="https://twitter.com/">Twitter</a>
+    <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
+    <p class="copyright" style="color: #eaf6f6;
+    font-size: 10px;
+    padding: 20px 0;">© Mishra</p>
+</div>
+
+{% endblock body %}
